@@ -1,0 +1,129 @@
+* {
+  background-color: #252424; /* Dark background */
+  font-family: "Tilt Neon";
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 40px;
+}
+
+.subject-button {
+  font-size: 2em;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 25px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+.subject-button.active {
+  outline: 6px solid yellow; /* Highlight outline when active */
+}
+
+.board {
+  gap: 20px;
+  background-color: #252424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Tilt Neon', sans-serif; /* Make sure to import or include this font */
+}
+
+.top-section {
+  background-color: #333333;
+  border-radius: 47px;
+  width: 90%;
+  margin-top: 35px;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  background-color: #333333;
+  color: white;
+  font-size: 50px;
+}
+
+.count-box {
+  background-color: #b1b2b5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding: 5px 10px */
+  border-radius: 47px;
+  margin: 0 auto;
+  font-size: 32px;
+  color: black; 
+}
+
+.count-description {
+  margin-top: 10px;
+  background-color: #333333;
+  color: white;
+  font-size: 10px;
+}
+
+.course-section {
+  width: 90%;
+  margin-top: 20px;
+  background-color: #525f5e;
+  border-radius: 47px;
+  padding: 10px;
+}
+
+.course-button {
+  background-color: #525f5e; /* Same as section background */
+  border-radius: 47px;
+  color: #f2f2f2;
+  font-size: 73px;
+  text-align: center;
+}
+
+.bunks-section {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.bunks-text {
+  color: white;
+  font-size: 62px;
+}
+.available{
+  font-size: 26px;
+
+}
+
+.bunks-count {
+  background-color: #b1b2b5;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin-left: 10px;
+  width: 175px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 104px;
+  color: #d55050;
+}
+
+.bunk-button {
+  background-color: white;
+  border-radius: 47px;
+  width: 90%;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  font-size: 106px;
+  color: black;
+  text-transform: uppercase;
+}
