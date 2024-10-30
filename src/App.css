@@ -69,16 +69,10 @@
   color: white;
   font-size: 10px;
 }
-
-.course-section {
+.course-button {
   width: 90%;
   margin-top: 20px;
-  background-color: #525f5e;
-  border-radius: 47px;
   padding: 10px;
-}
-
-.course-button {
   background-color: #525f5e; /* Same as section background */
   border-radius: 47px;
   color: #f2f2f2;
@@ -115,8 +109,17 @@
   font-size: 104px;
   color: #d55050;
 }
+.bunk-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
 
+.bunk-button:active {
+  transform: scale(0.9);
+  transition: transform 0.1s;
+}
 .bunk-button {
+  
   background-color: white;
   border-radius: 47px;
   width: 90%;
