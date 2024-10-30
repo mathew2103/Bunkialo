@@ -107,6 +107,17 @@ const App = () => {
       </div>
 
       <div className="board">
+        <div className="course-section">
+          <div className="course-button">{activeButton ? activeButton : "Select a course"}</div>
+        </div>
+        <div className="bunks-section">
+          <div className="bunks-text">
+            Bunks:- <span className="available">(available)</span>
+          </div>
+          <div className="bunks-count">{data[activeButton]-bunkCounts[activeButton]}</div>
+        </div>
+        <div className="bunk-button" onClick={incrementBunkCount}>BUNK?</div>
+      </div>
         <div className="top-section">
           <div className="title">Do you remember your bunk count?</div>
           <input
@@ -120,17 +131,6 @@ const App = () => {
             ever have to trace your bunk count again)
           </div>
         </div>
-        <div className="course-section">
-          <div className="course-button">{activeButton ? activeButton : "Select a course"}</div>
-        </div>
-        <div className="bunks-section">
-          <div className="bunks-text">
-            Bunks:- <span className="available">(available)</span>
-          </div>
-          <div className="bunks-count">{data[activeButton]-bunkCounts[activeButton]}</div>
-        </div>
-        <div className="bunk-button" onClick={incrementBunkCount}>BUNK?</div>
-      </div>
     </div>
   );
 };
