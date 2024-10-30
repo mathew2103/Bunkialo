@@ -1,19 +1,20 @@
 {
   "name": "Bunkialo",
   "short_name": "Bunkialo",
-  "start_url": "/",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/src/assets/icon2.png",
-      "sizes": "192x192",
+      "src": "src/assets/icon2.png",
+      "sizes": "863x866",
       "type": "image/png"
     },
     {
-      "src": "/src/assets/icon2.png",
-      "sizes": "512x512",
+      "src": "src/assets/icon2.png",
+      "sizes": "863x866",
       "type": "image/png"
     }
   ]
