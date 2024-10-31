@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const App = () => {
+export default function App() {
   const [activeButton, setActiveButton] = useState(null);
   const [bunkCounts, setBunkCounts] = useState({
     Maths: 0,
@@ -35,8 +35,19 @@ const App = () => {
     localStorage.setItem("bunkCounts", JSON.stringify(bunkCounts));
   }, [bunkCounts]);
 
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.name = 'viewport';
+    metaTag.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(metaTag);
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []);
+
   const handleClick = (buttonName) => {
     setActiveButton(buttonName);
+    document.querySelector(".board").scrollIntoView({ behavior: "smooth" });
   };
 
   const handleBunkCountChange = (event) => {
@@ -111,7 +122,6 @@ const App = () => {
       >
         Network
       </div>
-
       <div className="board">
         <div className="course-button">
           {activeButton ? activeButton : "Select a course"}
@@ -119,7 +129,8 @@ const App = () => {
         <div className="bunks-section">
           <div className="bunks-text">
             Bunks:-
-            <br /> <span className="available">(available)</span>
+            <br />
+            <p className="available"> (available)</p>
           </div>
           <div className="bunks-count">
             {activeButton ? data[activeButton] - bunkCounts[activeButton] : "?"}
@@ -144,6 +155,4 @@ const App = () => {
       </div>
     </div>
   );
-};
-
-export default App;
+}

@@ -1,5 +1,5 @@
 * {
-  background-color: #252424; /* Dark background */
+  background-color: #252424; 
   font-family: "Tilt Neon";
   align-items: center;
 }
@@ -19,28 +19,29 @@
   border-radius: 25px;
   width: 100%;
   text-align: center;
-  cursor: pointer; /* Add cursor pointer for better UX */
+  cursor: pointer; 
 }
 
 .subject-button.active {
-  outline: 6px solid yellow; /* Highlight outline when active */
+  outline: 6px solid yellow; 
 }
 
 .board {
+  margin-top: 50px;
   gap: 20px;
   background-color: #252424;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Tilt Neon', sans-serif; /* Make sure to import or include this font */
+  font-family: 'Tilt Neon', sans-serif; 
 }
 
 .top-section {
   background-color: #333333;
   border-radius: 47px;
-  width: 90%;
+  width: 100%;
   margin-top: 35px;
-  padding: 20px;
+  padding: 20px;  
   text-align: center;
 }
 
@@ -56,9 +57,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* padding: 5px 10px */
+  width: 100%;
   border-radius: 47px;
-  margin: 0 auto;
+  
   font-size: 32px;
   color: black; 
 }
@@ -73,7 +74,7 @@
   width: 90%;
   margin-top: 20px;
   padding: 10px;
-  background-color: #525f5e; /* Same as section background */
+  background-color: #525f5e; 
   border-radius: 47px;
   color: #f2f2f2;
   font-size: 73px;
@@ -90,10 +91,12 @@
 .bunks-text {
   color: white;
   font-size: 62px;
+  text-align: center;
 }
 .available{
-  font-size: 26px;
-
+  font-size: 18px;
+  margin-top: -15px;
+  margin-left: 30px;
 }
 
 .bunks-count {
@@ -112,6 +115,7 @@
 .bunk-button:hover {
   transform: scale(1.1);
   transition: transform 0.2s;
+  cursor: default;
 }
 
 .bunk-button:active {
