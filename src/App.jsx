@@ -134,7 +134,11 @@ export default function App() {
             <p className="available"> (available)</p>
           </div>
           <div className="bunks-count">
-            {activeButton ? data[activeButton] - bunkCounts[activeButton] : "?"}
+            {activeButton
+              ? !isNaN(bunkCounts[activeButton])
+                ? data[activeButton] - bunkCounts[activeButton]
+                : data[activeButton]
+              : "?"}
           </div>
         </div>
         <div className="bunk-button" onClick={incrementBunkCount}>

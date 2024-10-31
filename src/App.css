@@ -99,7 +99,6 @@
   margin-top: -13px;
   margin-right: 35px;
 }
-
 .bunks-count {
   background-color: #b1b2b5;
   box-sizing: border-box;
@@ -116,7 +115,7 @@
 .bunk-button:hover {
   transform: scale(1.1);
   transition: transform 0.2s;
-  cursor: default;
+  cursor:default ;
 }
 
 .bunk-button:active {
