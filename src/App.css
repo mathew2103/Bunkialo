@@ -1,5 +1,5 @@
 * {
-  background-color: #252424; 
+  background-color: #252424;
   font-family: "Tilt Neon";
   align-items: center;
 }
@@ -19,21 +19,21 @@
   border-radius: 25px;
   width: 100%;
   text-align: center;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .subject-button.active {
-  outline: 6px solid yellow; 
+  outline: 6px solid yellow;
 }
 
 .board {
-  margin-top: 50px;
+  margin-top: 75px;
   gap: 20px;
   background-color: #252424;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Tilt Neon', sans-serif; 
+  font-family: "Tilt Neon", sans-serif;
 }
 
 .top-section {
@@ -41,7 +41,7 @@
   border-radius: 47px;
   width: 100%;
   margin-top: 35px;
-  padding: 20px;  
+  padding: 20px;
   text-align: center;
 }
 
@@ -59,9 +59,9 @@
   text-align: center;
   width: 100%;
   border-radius: 47px;
-  
+
   font-size: 32px;
-  color: black; 
+  color: black;
 }
 
 .count-description {
@@ -74,7 +74,7 @@
   width: 90%;
   margin-top: 20px;
   padding: 10px;
-  background-color: #525f5e; 
+  background-color: #525f5e;
   border-radius: 47px;
   color: #f2f2f2;
   font-size: 73px;
@@ -91,19 +91,20 @@
 .bunks-text {
   color: white;
   font-size: 62px;
+  width: 100%;
   text-align: center;
 }
-.available{
+.available {
   font-size: 18px;
-  margin-top: -15px;
-  margin-left: 30px;
+  margin-top: -13px;
+  margin-right: 35px;
 }
 
 .bunks-count {
   background-color: #b1b2b5;
   box-sizing: border-box;
   border-radius: 100%;
-  margin-left: 10px;
+  margin-left: 20px;
   width: 175px;
   height: 125px;
   display: flex;
@@ -123,7 +124,6 @@
   transition: transform 0.1s;
 }
 .bunk-button {
-  
   background-color: white;
   border-radius: 47px;
   width: 90%;

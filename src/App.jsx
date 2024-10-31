@@ -36,9 +36,10 @@ export default function App() {
   }, [bunkCounts]);
 
   useEffect(() => {
-    const metaTag = document.createElement('meta');
-    metaTag.name = 'viewport';
-    metaTag.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    const metaTag = document.createElement("meta");
+    metaTag.name = "viewport";
+    metaTag.content =
+      "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
     document.head.appendChild(metaTag);
     return () => {
       document.head.removeChild(metaTag);
