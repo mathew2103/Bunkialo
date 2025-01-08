@@ -3,12 +3,12 @@
   "name": "Bunkialo",
   "icons": [
     {
-      "src": "/src/assets/icon2.png.png",
+      "src": "/src/assets/icon2.png",
       "type": "image/png",
       "sizes": "863x866"
     },
     {
-      "src": "/src/assets/icon2.png.png",
+      "src": "/src/assets/icon2.png",
       "type": "image/png",
       "sizes": "863x866"
     }
@@ -16,5 +16,7 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Bunkialo is a sample PWA application.",
+  "scope": "/"
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const [activeButton, setActiveButton] = useState(null);
@@ -158,6 +159,7 @@ export default function App() {
           ever have to trace your bunk count again)
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
