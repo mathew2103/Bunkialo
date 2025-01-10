@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react";
-
+const noOfWeeks=11
 const subjectConfig = {
-  S1: { name: "Maths", color: "cyan", subject_credit: 4, lab: false },
-  S2: { name: "Computer Organisation", color: "rgb(178, 54, 79)", subject_credit: 3, lab: false },
-  S3: { name: "DSA", color: "limegreen", subject_credit: 4, lab: false },
-  S4: { name: "EC", color: "orange", subject_credit: 4, lab: false },
-  S5: { name: "PD", color: "blueviolet", subject_credit: 1, lab: false },
-  S6: { name: "IT", color: "greenyellow", subject_credit: 4, lab: false },
-  S7: { name: "Signals", color: "royalblue", subject_credit: 4, lab: false }
+  S1: { name: "Maths", subject_credit: 4, color: "cyan" },
+  S2: { name: "Computer Organisation", subject_credit: 4, color: "rgb(178, 54, 79)" },
+  S3: { name: "DSA", subject_credit: 5, color: "limegreen" },
+  S4: { name: "EC", subject_credit: 5, color: "orange" },
+  S5: { name: "PD", subject_credit: 1, color: "blueviolet" },
+  S6: { name: "IT", subject_credit: 4, color: "greenyellow" },
+  S7: { name: "Signals", subject_credit: 4, color: "royalblue" },
 };
-const credit_to_maxbunks = (subject_credit, lab) => {
-  return lab ? (subject_credit-1) * 2 : subject_credit * 2;
+const credit_to_maxbunks = (subject_credit) => {
+  return ((subject_credit-1)*noOfWeeks* 0.2)
 };
 
 export default function App() {
