@@ -1,6 +1,7 @@
 ## Week count
 for 
-(17 weeks in total)-(1 week for midsem)-(3 week for endsem)-(1 week for public holdays)-(1 week for safe bunk count) = 11 weeks
+(17 weeks in total)-(1 week for midsem)-(3 week for endsem)-(1 week for public holdays)= 12 weeks
+we consider one bunk count less for safety
 ## Lab ??
 Kopala and Emmy mam marked only 2 points for his lab, counting the 2 hours of lab to be just one hour as any normal class 
 
