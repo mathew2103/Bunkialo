@@ -2,26 +2,26 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react";
 
-const subjectConfig = {
-  S1: { name: "Maths", color: "cyan", subject_credit: 4, lab: false },
-  S2: { name: "Computer Organisation", color: "rgb(178, 54, 79)", subject_credit: 3, lab: false },
-  S3: { name: "DSA", color: "limegreen", subject_credit: 4, lab: false },
-  S4: { name: "EC", color: "orange", subject_credit: 4, lab: false },
-  S5: { name: "PD", color: "blueviolet", subject_credit: 1, lab: false },
-  S6: { name: "IT", color: "greenyellow", subject_credit: 4, lab: false },
-  S7: { name: "Signals", color: "royalblue", subject_credit: 4, lab: false }
-};
-const credit_to_maxbunks = (subject_credit, lab) => {
-  return lab ? (subject_credit-1) * 2 : subject_credit * 2;
-};
-
 export default function App() {
-  var [activeButton, setActiveButton] = useState(null);
-  
-
-  const [bunkCounts, setBunkCounts] = useState(
-    Object.keys(subjectConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {})
-  );
+  const [activeButton, setActiveButton] = useState(null);
+  const [bunkCounts, setBunkCounts] = useState({
+    Maths: 0,
+    English: 0,
+    CP: 0,
+    EC: 0,
+    German: 0,
+    IT: 0,
+    Network: 0,
+  });
+  const data = {
+    Maths: 8,
+    English: 6,
+    CP: 8,
+    EC: 8,
+    German: 2,
+    IT: 8,
+    Network: 8,
+  };
 
   // Load bunkCounts from local storage when the component mounts
   useEffect(() => {
@@ -47,8 +47,8 @@ export default function App() {
     };
   }, []);
 
-  const handleClick = (subjectKey) => {
-    setActiveButton(subjectKey);
+  const handleClick = (buttonName) => {
+    setActiveButton(buttonName);
     document.querySelector(".board").scrollIntoView({ behavior: "smooth" });
   };
 
@@ -69,33 +69,76 @@ export default function App() {
 
   return (
     <div className="container">
-      {Object.keys(subjectConfig)
-        .sort() // This ensures S1, S2, etc. are in order
-        .map(key => (
-        <div
-          key={key}
-          className={`subject-button ${activeButton === key ? "active" : ""}`}
-          style={{ backgroundColor: subjectConfig[key].color }}
-          onClick={() => handleClick(key)}
-        >
-          {subjectConfig[key].name}
-        </div>
-      ))}
-
+      <div
+        className={`subject-button ${activeButton === "Maths" ? "active" : ""}`}
+        style={{ backgroundColor: "cyan" }}
+        onClick={() => handleClick("Maths")}
+      >
+        Maths
+      </div>
+      <div
+        className={`subject-button ${
+          activeButton === "English" ? "active" : ""
+        }`}
+        style={{ backgroundColor: "rgb(178, 54, 79)" }}
+        onClick={() => handleClick("English")}
+      >
+        English
+      </div>
+      <div
+        className={`subject-button ${activeButton === "CP" ? "active" : ""}`}
+        style={{ backgroundColor: "limegreen" }}
+        onClick={() => handleClick("CP")}
+      >
+        CP
+      </div>
+      <div
+        className={`subject-button ${activeButton === "EC" ? "active" : ""}`}
+        style={{ backgroundColor: "orange" }}
+        onClick={() => handleClick("EC")}
+      >
+        EC
+      </div>
+      <div
+        className={`subject-button ${
+          activeButton === "German" ? "active" : ""
+        }`}
+        style={{ backgroundColor: "blueviolet" }}
+        onClick={() => handleClick("German")}
+      >
+        German
+      </div>
+      <div
+        className={`subject-button ${activeButton === "IT" ? "active" : ""}`}
+        style={{ backgroundColor: "greenyellow" }}
+        onClick={() => handleClick("IT")}
+      >
+        IT
+      </div>
+      <div
+        className={`subject-button ${
+          activeButton === "Network" ? "active" : ""
+        }`}
+        style={{ backgroundColor: "royalblue" }}
+        onClick={() => handleClick("Network")}
+      >
+        Network
+      </div>
       <div className="board">
         <div className="course-button">
-          {activeButton ? subjectConfig[activeButton].name : "Select a course"}
+          {activeButton ? activeButton : "Select a course"}
         </div>
         <div className="bunks-section">
           <div className="bunks-text">
-            Bunks:-<br />
+            Bunks:-
+            <br />
             <p className="available"> (available)</p>
           </div>
           <div className="bunks-count">
             {activeButton
               ? !isNaN(bunkCounts[activeButton])
-                ? credit_to_maxbunks(subjectConfig[activeButton].subject_credit, subjectConfig[activeButton].lab) - bunkCounts[activeButton]
-                : credit_to_maxbunks(subjectConfig[activeButton].subject_credit, subjectConfig[activeButton].lab)
+                ? data[activeButton] - bunkCounts[activeButton]
+                : data[activeButton]
               : "?"}
           </div>
         </div>
