@@ -137,3 +137,17 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
 }
+
+.dev-info {
+  margin-top: 40px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  background-color: #252424;
+}
+
+.dev-info a {
+  color: #888;
+  text-decoration: none;
+  background-color: #252424;
+}

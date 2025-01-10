@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { Analytics } from "@vercel/analytics/react";
 const noOfWeeks=12
 const subjectConfig = {
   S1: { name: "Maths", subject_credit: 4, color: "cyan" },
@@ -118,7 +117,10 @@ export default function App() {
           ever have to trace your bunk count again)
         </div>
       </div>
-      <Analytics />
+      <div className="dev-info">
+        Developed by <a href="https://www.linkedin.com/in/noel-georgi-22521a303/" target="_blank" rel="noopener noreferrer">Noel Georgi</a>
+        Idea of <a href="https://www.linkedin.com/in/srimoneyshankar-ajith-a5a6831ba/" target="_blank" rel="noopener noreferrer">Srimoneyshankar Ajith</a>
+      </div>
     </div>
   );
 }
