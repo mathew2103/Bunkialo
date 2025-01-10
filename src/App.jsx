@@ -99,7 +99,9 @@ export default function App() {
               : "?"}
           </div>
         </div>
-        <div className="bunk-button" onClick={incrementBunkCount}>
+        <div className="bunk-button" 
+             onClick={incrementBunkCount}
+             style={{ userSelect: 'none' }}>
           BUNK?
         </div>
       </div>
