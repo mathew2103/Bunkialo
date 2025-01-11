@@ -6,10 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
     />
-    <link rel="icon" href="src/assets/bunkialo_logo.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#000000" />
     <title>Bunkialo</title>
-    <!-- <link rel="manifest" href="manifest.json" /> -->
+    <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,5 +19,22 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then(
+            (registration) => {
+              console.log(
+                "ServiceWorker registered with scope:",
+                registration.scope
+              );
+            },
+            (err) => {
+              console.log("ServiceWorker registration failed:", err);
+            }
+          );
+        });
+      }
+    </script>
   </body>
 </html>
