@@ -188,7 +188,7 @@
 
 .popup {
   background: #2a2a2a;
-  padding: 25px 25px 25px 25px;
+  padding: 60px 25px 25px 25px;  /* Increased top padding */
   border-radius: 16px;
   position: relative;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -206,8 +206,7 @@
   gap: 18px;
   width: 100%;
   background: #2a2a2a;
-  padding: 15px 5px;
-  padding-right: 40px; /* Add space for close button */
+  padding-top: 10px;  /* Add space at the top */
   flex-grow: 1;
 }
 
@@ -218,6 +217,7 @@
   align-items: center;
   background: #2a2a2a;
   padding: 8px;
+  margin-top: 5px;  /* Add small space between input groups */
 }
 
 .subject-input-group label {
@@ -263,8 +263,8 @@
 
 .close-button {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 15px;
+  right: 15px;
   background: #333;
   border: none;
   font-size: 24px;
@@ -277,7 +277,6 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  margin-left: 20px;
 }
 
 .close-button:hover {
@@ -338,7 +337,7 @@
 
 @media (max-width: 480px) {
   .popup {
-    padding: 15px;
+    padding: 50px 15px 15px 15px;  /* Adjusted padding for mobile */
   }
 
   .subject-input-group {
