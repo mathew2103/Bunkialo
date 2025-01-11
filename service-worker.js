@@ -3,7 +3,7 @@
 //   "/",
 //   "index.html",
 //   "src/main.jsx",
-//   "src/assets/icon2.png",
+//   "public/icons/bunkialo logo.svg",
 //   // Add other assets you want to cache
 // ];
 
@@ -15,7 +15,7 @@
 // });
 
 // self.addEventListener("activate", (event) => {
-//   event.waitUntil(clients.claim());
+//   event.waitUntil(self.clients.claim());
 // });
 
 // self.addEventListener("fetch", (event) => {
