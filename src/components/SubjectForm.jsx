@@ -42,7 +42,7 @@ function SubjectForm({ onSubmit, onClose }) {
         // Remove the selected subject
         .filter(([key]) => key !== keyToRemove)
         // Rebuild object with new sequential keys
-        .reduce((accumulator, [_key, value], index) => ({
+        .reduce((accumulator, [, value], index) => ({
             ...accumulator,
             [`S${index + 1}`]: value
         }), {});
@@ -97,10 +97,8 @@ function SubjectForm({ onSubmit, onClose }) {
         </div>
       ))}
       <div className="form-actions">
-        <button type="button" className="add-button" onClick={addSubject}>
-          + Add Subject
-        </button>
-        <button type="submit">Save All Changes</button>
+        <button type="button" onClick={addSubject}>＋</button>
+        <button type="submit">✓</button>
       </div>
     </form>
   );

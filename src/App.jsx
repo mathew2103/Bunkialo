@@ -15,7 +15,6 @@ export default function App() {
     Object.keys(subjectConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {})
   );
 
-  // Load bunkCounts from local storage when the component mounts
   useEffect(() => {
     const storedBunkCounts = localStorage.getItem("bunkCounts");
     if (storedBunkCounts) {
@@ -24,7 +23,6 @@ export default function App() {
     
   }, []);
 
-  // Save bunkCounts to local storage whenever it changes
   useEffect(() => {
     localStorage.setItem("bunkCounts", JSON.stringify(bunkCounts));
   }, [bunkCounts]);
@@ -68,13 +66,6 @@ export default function App() {
 
   return (
     <div className="container">
-      <button 
-        className="config-button"
-        onClick={() => setShowPopup(true)}
-      >
-        Edit courses
-      </button>
-
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup">
@@ -83,18 +74,29 @@ export default function App() {
         </div>
       )}
 
-      {Object.keys(subjectConfig)
-        .sort() // This ensures S1, S2, etc. are in order
-        .map(key => (
-        <div
-          key={key}
-          className={`subject-button ${activeButton === key ? "active" : ""}`}
-          style={{ backgroundColor: subjectConfig[key].color }}
-          onClick={() => handleClick(key)}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+        <button 
+          className="config-button"
+          onClick={() => setShowPopup(true)}
         >
-          {subjectConfig[key].name}
-        </div>
-      ))}
+          Edit
+        </button>
+      </div>
+
+      <div className="subjects-container">
+        {Object.keys(subjectConfig)
+          .sort() 
+          .map(key => (
+          <div
+            key={key}
+            className={`subject-button ${activeButton === key ? "active" : ""}`}
+            style={{ backgroundColor: subjectConfig[key].color }}
+            onClick={() => handleClick(key)}
+          >
+            {subjectConfig[key].name}
+          </div>
+        ))}
+      </div>
 
       <div className="board">
         <div className="course-button">

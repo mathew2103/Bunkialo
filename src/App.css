@@ -74,7 +74,7 @@
   width: 90%;
   margin-top: 20px;
   padding: 10px;
-  background-color: #525f5e;
+  background-color: #333333;
   border-radius: 47px;
   color: #f2f2f2;
   font-size: 73px;
@@ -164,6 +164,14 @@
   cursor: pointer;
 }
 
+.subjects-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -180,13 +188,16 @@
 
 .popup {
   background: #2a2a2a;
-  padding: 25px;
+  padding: 25px 25px 25px 25px;
   border-radius: 16px;
   position: relative;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   max-width: 90vw;
   width: 500px;
   margin: 20px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .subject-form {
@@ -194,10 +205,10 @@
   flex-direction: column;
   gap: 18px;
   width: 100%;
-  max-height: 70vh;
-  overflow-y: auto;
   background: #2a2a2a;
   padding: 15px 5px;
+  padding-right: 40px; /* Add space for close button */
+  flex-grow: 1;
 }
 
 .subject-input-group {
@@ -241,19 +252,19 @@
 }
 
 .subject-form button[type="submit"] {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   padding: 10px;
-  background: #4CAF50;
+  background: #40d5bc;
   color: white;
   border: none;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   cursor: pointer;
 }
 
 .close-button {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
   background: #333;
   border: none;
   font-size: 24px;
@@ -266,6 +277,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  margin-left: 20px;
 }
 
 .close-button:hover {
@@ -291,31 +303,37 @@
 
 .form-actions {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  gap: 15px;
   background: #2a2a2a;
   margin-top: 20px;
-  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
 .form-actions button {
-  flex: 1;
-  min-width: 140px;
-  padding: 12px;
+  width: 50px;
+  height: 50px;
   border-radius: 12px;
-  font-size: 0.9em;
-  transition: all 0.2s ease;
-}
-
-.add-button {
-  background: #2e7d32;
+  font-size: 24px;
+  background: #333333;
   color: white;
   border: none;
-  border-radius: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.add-button:hover {
-  background: #3d8b40;
+.form-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.form-actions button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 480px) {
@@ -334,8 +352,8 @@
   }
 
   .form-actions button {
-    padding: 10px;
-    font-size: 0.8em;
-    min-width: 120px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
   }
 }
