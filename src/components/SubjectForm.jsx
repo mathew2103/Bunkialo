@@ -1,15 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-
-const defaultSubjectConfig = {
-  S1: { name: "Maths", subject_credit: 4, color: "cyan" },
-  S2: { name: "Computer Organisation", subject_credit: 4, color: "rgb(178, 54, 79)" },
-  S3: { name: "DSA", subject_credit: 5, color: "limegreen" },
-  S4: { name: "EC", subject_credit: 5, color: "orange" },
-  S5: { name: "PD", subject_credit: 1, color: "blueviolet" },
-  S6: { name: "IT", subject_credit: 4, color: "greenyellow" },
-  S7: { name: "Signals", subject_credit: 4, color: "royalblue" },
-};
+import { defaultSubjectConfig } from '../settings';
 
 // Helper function to generate soft pastel colors
 const generateUniqueColor = (existingColors) => {
@@ -120,4 +111,4 @@ SubjectForm.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export { SubjectForm, defaultSubjectConfig };
+export { SubjectForm };

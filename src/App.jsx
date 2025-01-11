@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
-import { SubjectForm, defaultSubjectConfig } from './components/SubjectForm';
+import { SubjectForm } from './components/SubjectForm';
+import { credit_to_maxbunks, defaultSubjectConfig } from './settings';
 import "./App.css";
-
-const noOfWeeks = 12;
-const credit_to_maxbunks = (subject_credit) => {
-  return Math.floor(((subject_credit) * noOfWeeks * 0.2)-1); //-1 to make it safe 
-};
 
 export default function App() {
   const [showPopup, setShowPopup] = useState(false);
