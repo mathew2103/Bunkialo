@@ -151,3 +151,133 @@
   text-decoration: none;
   background-color: #252424;
 }
+
+.config-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.subject-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #333;
+  padding: 20px;
+}
+
+.subject-input-group {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 40px;
+  gap: 10px;
+  align-items: center;
+  background: #333;
+}
+
+.subject-input-group label {
+  color: white;
+  background: #333;
+}
+
+.subject-input-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  color: black;
+}
+
+.subject-form button {
+  padding: 8px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subject-form button[type="submit"] {
+  margin-top: 15px;
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.remove-button {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  background: #333;
+  margin-top: 20px;
+}
+
+.add-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.add-button:hover, .remove-button:hover {
+  opacity: 0.9;
+}

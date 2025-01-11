@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
+import { SubjectForm, defaultSubjectConfig } from './components/SubjectForm';
 import "./App.css";
-const noOfWeeks=12
-const subjectConfig = {
-  S1: { name: "Maths", subject_credit: 4, color: "cyan" },
-  S2: { name: "Computer Organisation", subject_credit: 4, color: "rgb(178, 54, 79)" },
-  S3: { name: "DSA", subject_credit: 5, color: "limegreen" },
-  S4: { name: "EC", subject_credit: 5, color: "orange" },
-  S5: { name: "PD", subject_credit: 1, color: "blueviolet" },
-  S6: { name: "IT", subject_credit: 4, color: "greenyellow" },
-  S7: { name: "Signals", subject_credit: 4, color: "royalblue" },
-};
+
+const noOfWeeks = 12;
 const credit_to_maxbunks = (subject_credit) => {
-  return Math.floor((subject_credit) * noOfWeeks * 0.2);
+  return Math.floor(((subject_credit) * noOfWeeks * 0.2)-1); //-1 to make it safe 
 };
 
 export default function App() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [subjectConfig, setSubjectConfig] = useState(() => {
+    const stored = localStorage.getItem("subjectConfig");
+    return stored ? JSON.parse(stored) : defaultSubjectConfig;
+  });
   var [activeButton, setActiveButton] = useState(null);
-  
 
   const [bunkCounts, setBunkCounts] = useState(
     Object.keys(subjectConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {})
@@ -28,6 +25,7 @@ export default function App() {
     if (storedBunkCounts) {
       setBunkCounts(JSON.parse(storedBunkCounts));
     }
+    
   }, []);
 
   // Save bunkCounts to local storage whenever it changes
@@ -66,8 +64,29 @@ export default function App() {
     }));
   };
 
+  const handleAddSubject = (newConfig) => {
+    setSubjectConfig(newConfig);
+    localStorage.setItem("subjectConfig", JSON.stringify(newConfig));
+    setShowPopup(false);
+  };
+
   return (
     <div className="container">
+      <button 
+        className="config-button"
+        onClick={() => setShowPopup(true)}
+      >
+        Edit courses
+      </button>
+
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <SubjectForm onSubmit={handleAddSubject} onClose={() => setShowPopup(false)} />
+          </div>
+        </div>
+      )}
+
       {Object.keys(subjectConfig)
         .sort() // This ensures S1, S2, etc. are in order
         .map(key => (
@@ -119,6 +138,7 @@ export default function App() {
       </div>
       <div className="dev-info">
         Developed by <a href="https://www.linkedin.com/in/noel-georgi-22521a303/" target="_blank" rel="noopener noreferrer">Noel Georgi</a>
+        <br />
         Idea of <a href="https://www.linkedin.com/in/srimoneyshankar-ajith-a5a6831ba/" target="_blank" rel="noopener noreferrer">Srimoneyshankar Ajith</a>
       </div>
     </div>
