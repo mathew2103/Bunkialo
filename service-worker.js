@@ -3,8 +3,8 @@ const urlsToCache = [
   "/",
   "index.html",
   "src/main.jsx",
-  "public/icons/bunkialo logo.svg",
-  "screenshots/android screenshot.jpg",
+  "./icons/bunkialo logo.svg",
+  "./android screenshot.jpg",
   "manifest.json"
 ];
 
