@@ -40,6 +40,10 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("bunkCounts", JSON.stringify(bunkCounts));
+  }, [bunkCounts]);
+
   const handleClick = (subjectKey) => {
     setActiveButton(subjectKey);
     document.querySelector(".board").scrollIntoView({ behavior: "smooth" });
