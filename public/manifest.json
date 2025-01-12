@@ -2,8 +2,8 @@
   "name": "Bunkialo",
   "short_name": "Bunkialo",
   "description": "Track your bunks efficiently with Bunkialo - Your bunk management companion",
-  "start_url": ".",
-  "scope": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
@@ -11,9 +11,10 @@
   "categories": ["education", "utilities"],
   "screenshots": [
     {
-      "src": "/android screenshot.jpg",
+      "src": "/screenshots/android screenshot.jpg",
       "type": "image/jpeg",
       "sizes": "705x1280",
+      "form_factor": "narrow",
       "label": "Homescreen of Bunkialo"
     }
   ],
@@ -23,13 +24,26 @@
       "url": "/",
       "icons": [
         {
-          "src": "android/android-launchericon-192-192.png",
-          "sizes": "192x192"
+          "src": "/android/android-launchericon-192-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     }
   ],
   "icons": [
+    {
+      "src": "/android/android-launchericon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android/android-launchericon-192-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "windows11/SmallTile.scale-100.png",
       "sizes": "71x71"
@@ -125,6 +139,22 @@
     {
       "src": "windows11/Square44x44Logo.scale-200.png",
       "sizes": "88x88"
+    },
+    {
+      "src": "windows11/Square44x44Logo.scale-400.png",
+      "sizes": "176x176"
+    },
+    {
+      "src": "windows11/StoreLogo.scale-100.png",
+      "sizes": "50x50"
+    },
+    {
+      "src": "windows11/StoreLogo.scale-125.png",
+      "sizes": "63x63"
+    },
+    {
+      "src": "windows11/StoreLogo.scale-150.png",
+      "sizes": "75x75"
     },
     {
       "src": "windows11/Square44x44Logo.scale-400.png",
