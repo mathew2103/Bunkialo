@@ -9,23 +9,25 @@ export default function App() {
     const stored = localStorage.getItem("subjectConfig");
     return stored ? JSON.parse(stored) : defaultSubjectConfig;
   });
-  var [activeButton, setActiveButton] = useState(null);
+  
+  const [activeButton, setActiveButton] = useState(null);
 
-  const [bunkCounts, setBunkCounts] = useState(
-    Object.keys(subjectConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {})
-  );
-
-  useEffect(() => {
+  const [bunkCounts, setBunkCounts] = useState(() => {
     const storedBunkCounts = localStorage.getItem("bunkCounts");
     if (storedBunkCounts) {
-      setBunkCounts(JSON.parse(storedBunkCounts));
+      const parsed = JSON.parse(storedBunkCounts);
+      // Ensure all subjects have a count, defaulting to 0
+      return Object.keys(subjectConfig).reduce((acc, key) => ({
+        ...acc,
+        [key]: parsed[key] || 0
+      }), {});
     }
-    
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("bunkCounts", JSON.stringify(bunkCounts));
-  }, [bunkCounts]);
+    // Initialize all subjects with 0 if no stored data
+    return Object.keys(subjectConfig).reduce((acc, key) => ({
+      ...acc,
+      [key]: 0
+    }), {});
+  });
 
   useEffect(() => {
     const metaTag = document.createElement("meta");
@@ -61,6 +63,16 @@ export default function App() {
   const handleAddSubject = (newConfig) => {
     setSubjectConfig(newConfig);
     localStorage.setItem("subjectConfig", JSON.stringify(newConfig));
+    // Initialize bunk counts for new subjects
+    setBunkCounts(prev => {
+      const updatedCounts = { ...prev };
+      Object.keys(newConfig).forEach(key => {
+        if (!(key in updatedCounts)) {
+          updatedCounts[key] = 0;
+        }
+      });
+      return updatedCounts;
+    });
     setShowPopup(false);
   };
 
