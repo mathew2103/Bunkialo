@@ -160,7 +160,7 @@ export default function App() {
           </div>
       </div>
       <div className="dev-info">
-        Developed by <a href="https://www.linkedin.com/in/noel-georgi-22521a303/" target="_blank" rel="noopener noreferrer">Noel Georgi</a>
+        Developed by <a href="https://www.linkedin.com/in/noel-georgi-22521a303/" target="_blank" rel="noopener noreferrer">Noel Georgi</a> and <a href="https://www.linkedin.com/in/mathewmanachery/" target="_blank" rel="noopener noreferrer">Mathew Manachery</a>
         <br />
         Idea of <a href="https://www.linkedin.com/in/srimoneyshankar-ajith-a5a6831ba/" target="_blank" rel="noopener noreferrer">Srimoneyshankar Ajith</a>
       </div>
